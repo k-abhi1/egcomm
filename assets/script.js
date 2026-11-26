@@ -137,7 +137,7 @@ const expandedProductCatalog={
  "Network Camera":{
   image:cpProductImage("5c2e7611-df72-4ad4-b48d-dab5fa1d1592.png"),
   items:[
-   ["CP-UNC-EE61L2C-VMD-Q","6MP network infrared fisheye camera.",cpProductImage("72d292f9-43b5-42ff-9ab9-b5fbec90e740.png"),cpProductPage("cp-unc-ee61l2c-vmd-q")],
+   ["CP-UNC-EE61L2C-VMD-Q","6MP network infrared fisheye camera.",cpProductImage("72d292f9-43b5-42ff-9ab9-b5fbec90e740.png"),null],
    ["CP-UNC-BE51E-VMD-Q","5MP network box camera.",cpProductImage("46e20822-7b09-4991-88fc-34ff084e561e.jpg"),cpProductPage("cp-unc-be51e-vmd-q")],
    ["CP-UNC-DA41L3C-D-Q2","4MP network IR dome camera with 30 m illumination.",cpProductImage("5c2e7611-df72-4ad4-b48d-dab5fa1d1592.png"),cpProductPage("cp-unc-da41l3c-d-q2")],
    ["CP-UNC-TA41L3C-D-Q2","4MP network IR bullet camera with 30 m illumination.",cpProductImage("96bd65e3-5e7b-4cd5-856b-b98ad815a366.png"),cpProductPage("cp-unc-ta41l3c-d-q2")],
@@ -385,7 +385,7 @@ function showCat(i){
   image,
   source
  }))||[1,2,3,4].map((n,j)=>({name:category==="CarKam"?(j===0?"Dash cam":`CarKam Model ${n}`):`${category} – Model ${n}`,detail:category==="CarKam"&&j===0?"Dash Camera":description,image:photos[j%photos.length]}));
- $("prodGrid").innerHTML=items.map(item=>`<article class="product-item"><img src="${productImageUrl(item.image)}" alt="${item.name}" loading="lazy" decoding="async"><div><h4>${item.source?`<a href="${item.source}" target="_blank" rel="noopener noreferrer">`:""}${item.name}${item.source?"</a>":""}</h4><p>${item.detail}</p></div></article>`).join("");
+ $("prodGrid").innerHTML=items.map(item=>`<article class="product-item"><img src="${productImageUrl(item.image)}" alt="${item.name}" loading="lazy" decoding="async"><div><h4>${item.name}</h4><p>${item.detail}</p></div></article>`).join("");
 }
 $("tabs").innerHTML=productCategories.map((category,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${category}</button>`).join("");
 $("tabs").onclick=e=>{
