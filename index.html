@@ -430,7 +430,7 @@ $("megaMenu").innerHTML=`<a href="#products" data-product-all>All Products</a>${
 $("solMenu").innerHTML=sols.map(s=>`<a href="#solutions">${s[0]}</a>`).join("");
 $("fProd").innerHTML=cats.slice(0,8).map(c=>`<li><a href="#products">${c}</a></li>`).join("");
 $("fSol").innerHTML=sols.slice(0,8).map(s=>`<li><a href="#solutions">${s[0]}</a></li>`).join("");
-$("trendGrid").innerHTML=trend.map(t=>`<article class="card trend-card">${t.isNew?'<span class="trend-ribbon">New</span>':''}<div class="ph"><a href="${t.url}" target="_blank" rel="noopener noreferrer" aria-label="View ${t.name}"><img src="${t.image}" alt="${t.name}" loading="eager" decoding="async"></a></div><div class="b"><h3><a href="${t.url}" target="_blank" rel="noopener noreferrer">${t.name}</a></h3><p>${t.description}</p></div></article>`).join("");
+$("trendGrid").innerHTML=trend.map(t=>`<article class="card trend-card">${t.isNew?'<span class="trend-ribbon">New</span>':''}<div class="ph"><img src="${t.image}" alt="${t.name}" loading="eager" decoding="async"></div><div class="b"><h3>${t.name}</h3><p>${t.description}</p></div></article>`).join("");
 const trendTrack=$("trendGrid"),trendCards=[...trendTrack.children];
 let trendIndex=0;
 function trendVisibleCount(){return innerWidth<=380?1:innerWidth<=560?2:innerWidth<=760?3:innerWidth<=1100?4:5}
